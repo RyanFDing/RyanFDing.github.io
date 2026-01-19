@@ -223,7 +223,14 @@ async function sendMessage() {
         // Remove typing indicator
         typingMsg.remove();
         
-        // Get AI response
+        // Debug: log the response to see what we're getting
+        console.log('API Response:', data);
+        
+        // Get AI response - check if data structure is correct
+        if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+            throw new Error('Invalid response format from API');
+        }
+        
         const aiResponse = data.choices[0].message.content;
         
         // Add to conversation history
