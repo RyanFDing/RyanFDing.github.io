@@ -167,7 +167,7 @@ const chatContainer = document.getElementById('chatContainer');
 const chatInput = document.getElementById('chatInput');
 const chatButton = document.getElementById('chatButton');
 
-function addMessage(sender, text, isTyping = false) {
+function addMessage(sender, text) {
     const msgDiv = document.createElement('div');
     msgDiv.className = `chat-message ${sender}`;
     msgDiv.innerHTML = `
@@ -204,6 +204,9 @@ async function sendMessage() {
     const typingMsg = addMessage('ai', 'typing...');
     
     try {
+        console.log('Sending request to:', WORKER_URL);
+        console.log('Message history:', conversationHistory);
+        
         const response = await fetch(WORKER_URL, {
             method: 'POST',
             headers: {
@@ -214,24 +217,39 @@ async function sendMessage() {
             })
         });
 
+        console.log('Response status:', response.status);
+        
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            const errorText = await response.text();
+            console.error('Response error:', errorText);
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
+        console.log('Full API Response:', data);
         
         // Remove typing indicator
         typingMsg.remove();
         
-        // Debug: log the response to see what we're getting
-        console.log('API Response:', data);
+        // Check different possible response formats
+        let aiResponse;
         
-        // Get AI response - check if data structure is correct
-        if (!data.choices || !data.choices[0] || !data.choices[0].message) {
-            throw new Error('Invalid response format from API');
+        if (data.choices && data.choices[0] && data.choices[0].message) {
+            // Standard OpenAI/Groq format
+            aiResponse = data.choices[0].message.content;
+        } else if (data.message) {
+            // Alternative format
+            aiResponse = data.message;
+        } else if (data.content) {
+            // Another alternative
+            aiResponse = data.content;
+        } else if (data.error) {
+            // Error in response
+            throw new Error(data.error);
+        } else {
+            console.error('Unexpected response format:', data);
+            throw new Error('Unexpected response format from API');
         }
-        
-        const aiResponse = data.choices[0].message.content;
         
         // Add to conversation history
         conversationHistory.push({
@@ -243,7 +261,7 @@ async function sendMessage() {
         await typeMessage('ai', aiResponse);
         
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Full error details:', error);
         typingMsg.remove();
         addMessage('ai', "Sorry, I'm having trouble responding right now. Feel free to email me at ryanding28@gmail.com!");
     }
