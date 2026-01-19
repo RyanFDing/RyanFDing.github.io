@@ -16,7 +16,7 @@ let idleTimer = null;
 let hasShownProactive = false;
 
 // Cloudflare Worker URL
-const WORKER_URL = 'https://ryan-chat.usatu2001.workers.dev/';
+const WORKER_URL = 'https://ryan-chat.usatu2001.workers.dev';
 
 // Store conversation history
 let conversationHistory = [];
