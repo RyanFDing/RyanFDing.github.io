@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0e0e17;
+    color: #ececec;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: #0e0e17;
+    z-index: 50;
+    transition: opacity 2s ease-out;
+    pointer-events: none;
+}
+
+.overlay.hidden {
+    opacity: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 2rem;
+    max-width: 42rem;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.header-content {
+    text-align: center;
+}
+
+.time {
+    font-size: 1.125rem;
+    font-weight: 300;
+}
+
+.date {
+    font-size: 0.875rem;
+    color: #a3a3a3;
+    margin-top: 0.25rem;
+}
+
+main {
+    padding: 0 2rem;
+    max-width: 42rem;
+    margin: 0 auto;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.content {
+    line-height: 1.625;
+    font-size: 1rem;
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+.content p {
+    margin-bottom: 0;
+    min-height: 1.625rem;
+}
+
+.cursor-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.cursor {
+    display: inline-block;
+    width: 0.5rem;
+    height: 1.25rem;
+    background-color: #ececec;
+    transform: translateY(0.25rem);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+a {
+    color: #ececec;
+    text-decoration: underline;
+    text-decoration-color: #ececec;
+    text-underline-offset: 4px;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #a3a3a3;
+}
+
+.chat-section {
+    margin-top: 2rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.chat-section.visible {
+    opacity: 1;
+}
+
+.chat-container {
+    background-color: rgba(236, 236, 236, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+}
+
+.chat-message.user {
+    background-color: rgba(236, 236, 236, 0.1);
+    margin-left: 2rem;
+}
+
+.chat-message.ai {
+    background-color: rgba(163, 163, 163, 0.1);
+    margin-right: 2rem;
+}
+
+.chat-message .sender {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    color: #a3a3a3;
+}
+
+.chat-input-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.chat-input {
+    flex: 1;
+    background-color: rgba(236, 236, 236, 0.05);
+    border: 1px solid rgba(236, 236, 236, 0.2);
+    border-radius: 6px;
+    padding: 0.75rem;
+    color: #ececec;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+.chat-input:focus {
+    outline: none;
+    border-color: #ececec;
+}
+
+.chat-button {
+    background-color: #ececec;
+    color: #0e0e17;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.chat-button:hover {
+    background-color: #a3a3a3;
+}
+
+.chat-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.venmo-message {
+    text-align: center;
+    margin-top: 1rem;
+    color: #a3a3a3;
+    font-size: 0.875rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.venmo-message.visible {
+    opacity: 1;
+}
+
+footer {
+    margin-top: auto;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.social-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.social-link {
+    opacity: 0;
+    transform: translateY(0);
+    transition: all 0.3s;
+    animation: fadeInUp 0.5s forwards;
+}
+
+.social-link:hover {
+    transform: translateY(-8px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-link svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: #ececec;
+    transition: fill 0.3s;
+}
+
+.social-link:hover svg {
+    fill: #a3a3a3;
+}
+
+.skip-hint {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    color: #a3a3a3;
+    font-size: 0.875rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.skip-hint.visible {
+    opacity: 1;
+}
+
+@media (max-width: 640px) {
+    header, main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+    }
+}
