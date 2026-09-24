@@ -1,42 +1,225 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryan Ding</title>
-    <meta name="description" content="Ryan Ding, Senior at Conestoga High School, PGSS Alumni, AI Researcher">
+    <meta name="description" content="Ryan Ding — Computer Science @ UC Berkeley, AI researcher (NeurIPS, IEEE ICMI), software engineer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="overlay" id="overlay"></div>
-    
-    <header>
-        <div class="header-content">
-            <div class="time" id="time"></div>
-            <div class="date" id="date"></div>
+    <div class="glow" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <div class="clock">
+            <span class="time" id="time"></span>
+            <span class="date" id="date"></span>
         </div>
+        <nav class="nav">
+            <a href="#experience">experience</a>
+            <a href="#research">research</a>
+            <a href="#projects">projects</a>
+            <a href="#honors">honors</a>
+            <a href="#chat">chat</a>
+        </nav>
     </header>
 
     <main>
-        <div class="content" id="content"></div>
-        <div class="cursor-wrapper">
-            <div class="cursor" id="cursor"></div>
-        </div>
+        <!-- Hero -->
+        <section class="hero">
+            <h1 class="hero-name"><span id="typedName"></span><span class="cursor" id="cursor"></span></h1>
+            <p class="hero-tagline reveal">Computer Science @ UC Berkeley &middot; AI Researcher &middot; Software Engineer</p>
+            <blockquote class="hero-quote reveal">"What is the most important step a man can take? It's not the first one, is it? It's the next one. Always the next step."</blockquote>
 
-        <div class="chat-section" id="chatSection">
-            <p style="margin-bottom: 0.5rem;">chat with me:</p>
-            <div class="chat-container" id="chatContainer"></div>
-            <div class="chat-input-wrapper">
-                <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..." />
-                <button class="chat-button" id="chatButton">Send</button>
+            <div class="stats reveal">
+                <div class="stat"><span class="stat-value">NeurIPS</span><span class="stat-label">2024 acceptance &amp; presentation</span></div>
+                <div class="stat"><span class="stat-value">IEEE ICMI</span><span class="stat-label">2026 first author</span></div>
+                <div class="stat"><span class="stat-value">1st</span><span class="stat-label">NJX &amp; 1435 Capital Hackathon</span></div>
+                <div class="stat"><span class="stat-value">YC</span><span class="stat-label">Startup School '26</span></div>
             </div>
-            <div class="venmo-message" id="venmoMessage">my venmo is <a href="https://venmo.com/u/ryanfding" target="_blank">@ryanfding</a> btw 😛</div>
-        </div>
+
+            <div class="social-links reveal" id="socialLinks"></div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section" id="experience">
+            <h2 class="section-title"><span class="section-index">01</span>experience</h2>
+            <div class="timeline">
+                <article class="card reveal">
+                    <div class="card-head">
+                        <div>
+                            <h3>Software Engineer</h3>
+                            <p class="org">Dandelion Health Inc.</p>
+                        </div>
+                        <div class="meta">
+                            <span>Jun 2026 – Aug 2026</span>
+                            <span>Remote</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Built the <strong>AHA AI Lab Assessment Platform</strong> with the American Heart Association: interactive tools for exploring model performance across real-world patient cohorts and hospital populations.</li>
+                        <li>Worked on the Go + Kubernetes backend that connects the web portal to multimodal patient data: EHR, clinical notes, medical imaging, and ECG waveforms.</li>
+                        <li>Added fingerprint-based stale-data safeguards, TanStack Query data loading, and Vitest/Playwright integration and e2e tests.</li>
+                    </ul>
+                    <div class="tags"><span>Go</span><span>Kubernetes</span><span>TypeScript</span><span>TanStack Query</span><span>Playwright</span></div>
+                </article>
+
+                <article class="card reveal">
+                    <div class="card-head">
+                        <div>
+                            <h3>AI Researcher</h3>
+                            <p class="org">University of California, Berkeley</p>
+                        </div>
+                        <div class="meta">
+                            <span>Jun 2024 – Present</span>
+                            <span>Remote</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Advised by Berkeley researcher Jonathan Lu.</li>
+                        <li>Tested multilingual LLMs on claim verification across <strong>15 languages</strong>. They underperformed on low-resource languages, which are underrepresented in research and training data.</li>
+                        <li>Proposed a new <strong>Translation Bias</strong> metric, built on COMETKIWI, that scores accuracy and translation quality across languages.</li>
+                    </ul>
+                    <div class="tags"><span>LLMs</span><span>Multilingual NLP</span><span>Evaluation</span></div>
+                </article>
+
+                <article class="card reveal">
+                    <div class="card-head">
+                        <div>
+                            <h3>Research Scholar</h3>
+                            <p class="org">Carnegie Mellon University</p>
+                        </div>
+                        <div class="meta">
+                            <span>Jun 2025 – Aug 2025</span>
+                            <span>Pittsburgh, PA</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Built a Q&amp;A chatbot on Ollama that answers from personalized datasets using RAG.</li>
+                        <li>Worked with Professor Neil Simonetti on an Ultimate Tic-Tac-Toe AI (minimax, alpha-beta pruning, transposition table, parallelized on the Bridges-2 supercomputer) that beats the hardest difficulty of a widely used engine.</li>
+                    </ul>
+                    <div class="tags"><span>RAG</span><span>Ollama</span><span>HPC</span><span>Game AI</span></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="section" id="research">
+            <h2 class="section-title"><span class="section-index">02</span>research &amp; publications</h2>
+            <div class="pub-list">
+                <div class="pub reveal">
+                    <span class="pub-venue">IEEE ICMI 2026</span>
+                    <p>First-author paper on multilingual claim verification and translation bias in LLMs.</p>
+                </div>
+                <div class="pub reveal">
+                    <span class="pub-venue">NeurIPS 2024</span>
+                    <p>2nd Workshop on Attributing Model Behavior at Scale: accepted and presented.</p>
+                </div>
+                <div class="pub reveal">
+                    <span class="pub-venue">NeurIPS</span>
+                    <p>Safe Generative AI Workshop: accepted.</p>
+                </div>
+                <div class="pub reveal">
+                    <span class="pub-venue">SoCalNLP</span>
+                    <p>SoCalNLP Symposium: accepted.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section" id="projects">
+            <h2 class="section-title"><span class="section-index">03</span>projects</h2>
+            <div class="grid-2">
+                <article class="card project reveal">
+                    <div class="project-badge">1st Place</div>
+                    <h3>GuardLine</h3>
+                    <p class="org">NJX &amp; 1435 Capital Hackathon</p>
+                    <p>A real-time phone-screening system that routes Twilio calls through an OpenAI Realtime receptionist and a GPT-4o-mini risk classifier, which approves, blocks, or holds AI-driven scam calls.</p>
+                    <p class="muted">Also has a whitelist, multi-round questioning, push alerts, SQLite call logging, and a live security dashboard.</p>
+                    <div class="tags"><span>React</span><span>Node.js</span><span>TypeScript</span><span>Twilio</span></div>
+                </article>
+
+                <article class="card project reveal">
+                    <h3>Ultimate Tic-Tac-Toe AI</h3>
+                    <p class="org">Engine + browser game</p>
+                    <p>Minimax with alpha-beta pruning and transposition-table caching. It beats the highest difficulty of Michael Xing's widely used open-source engine.</p>
+                    <p class="muted">Search runs in parallel on NSF's Bridges-2 supercomputer, scaling from 1 to 256 threads per RM node.</p>
+                    <div class="tags"><span>Java</span><span>JavaScript</span><span>Multithreading</span></div>
+                    <a class="project-link" href="https://ryanfding.github.io/UTTT/" target="_blank" rel="noopener noreferrer">play it in your browser &rarr;</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Honors -->
+        <section class="section" id="honors">
+            <h2 class="section-title"><span class="section-index">04</span>honors &amp; achievements</h2>
+            <div class="honors-grid">
+                <div class="honor reveal"><span class="honor-title">The Leadership Award</span><span class="honor-detail">$11,600</span></div>
+                <div class="honor reveal"><span class="honor-title">Pfizer OSA Scholar</span><span class="honor-detail">$12,000</span></div>
+                <div class="honor reveal"><span class="honor-title">PA DECA Scholarship</span><span class="honor-detail">$1,000</span></div>
+                <div class="honor reveal"><span class="honor-title">1600 SAT</span><span class="honor-detail">Perfect score</span></div>
+                <div class="honor reveal"><span class="honor-title">3&times; AIME Qualifier</span><span class="honor-detail">MAA</span></div>
+                <div class="honor reveal"><span class="honor-title">USACO Gold</span><span class="honor-detail">Competitive programming</span></div>
+                <div class="honor reveal"><span class="honor-title">USABO Semifinalist</span><span class="honor-detail">Top 225 &middot; Honorable Mention</span></div>
+                <div class="honor reveal"><span class="honor-title">YC Startup School</span><span class="honor-detail">2026</span></div>
+                <div class="honor reveal"><span class="honor-title">VEX Robotics</span><span class="honor-detail">3&times; Eastern PA skills champion &middot; Worlds qualifier</span></div>
+            </div>
+        </section>
+
+        <!-- Education + Skills -->
+        <section class="section" id="education">
+            <h2 class="section-title"><span class="section-index">05</span>education &amp; skills</h2>
+            <div class="grid-2">
+                <article class="card reveal">
+                    <h3>University of California, Berkeley</h3>
+                    <p class="org">B.A. Computer Science &middot; College of Computing, Data Science, and Society</p>
+                    <p class="label">Coursework</p>
+                    <div class="tags"><span>Discrete Math &amp; Probability</span><span>SICP (CS 61A)</span><span>Foundations of Data Science</span><span>Multivariable Calculus</span><span>Linear Algebra</span><span>Logic</span></div>
+                    <p class="label">Organizations</p>
+                    <div class="tags"><span>Alumni Scholars Program</span></div>
+                    <p class="label">Before Berkeley</p>
+                    <ul class="compact">
+                        <li>Pennsylvania Governor's School for the Sciences @ CMU</li>
+                        <li>Research intern @ Temple University, advised by Prof. Stephen MacNeil</li>
+                        <li>VEX Robotics Team 6121C programmer &middot; varsity squash</li>
+                    </ul>
+                </article>
+
+                <article class="card reveal">
+                    <h3>Technical Skills</h3>
+                    <p class="label">Languages</p>
+                    <div class="tags"><span>Python</span><span>Java</span><span>TypeScript/JavaScript</span><span>C/C++</span><span>Go</span><span>SQL</span><span>HTML/CSS</span><span>R</span><span>MATLAB</span></div>
+                    <p class="label">Frameworks</p>
+                    <div class="tags"><span>FastAPI</span><span>Flask</span><span>Next.js</span><span>React</span><span>Node.js</span><span>Vite</span><span>Pandas</span><span>NumPy</span><span>scikit-learn</span></div>
+                    <p class="label">Infra &amp; Tools</p>
+                    <div class="tags"><span>Docker</span><span>Kubernetes</span><span>AWS</span><span>Azure</span><span>Snowflake</span><span>Linux</span><span>Git</span><span>CUDA</span></div>
+                    <p class="label">Databases</p>
+                    <div class="tags"><span>Redis</span><span>DynamoDB</span><span>SQLite</span></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Chat -->
+        <section class="section" id="chat">
+            <h2 class="section-title"><span class="section-index">06</span>chat with me</h2>
+            <div class="chat-card reveal">
+                <div class="chat-container" id="chatContainer"></div>
+                <div class="chat-input-wrapper">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Ask about my research, projects, Berkeley..." />
+                    <button class="chat-button" id="chatButton">Send</button>
+                </div>
+            </div>
+            <div class="venmo-message" id="venmoMessage">my venmo is <a href="https://venmo.com/u/ryanfding" target="_blank" rel="noopener noreferrer">@ryanfding</a> btw 😛</div>
+        </section>
     </main>
 
-    <footer id="footer"></footer>
-
-    <div class="skip-hint" id="skipHint">Press Enter to skip</div>
+    <footer>
+        <p>&copy; <span id="year"></span> Ryan Ding &middot; <a href="mailto:ryanding@berkeley.edu">ryanding@berkeley.edu</a></p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

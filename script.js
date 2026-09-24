@@ -1,6 +1,5 @@
 // SVG Icons
 const icons = {
-    twitter: '<svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
     linkedin: '<svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>',
     github: '<svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>',
     instagram: '<svg viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>',
@@ -8,9 +7,6 @@ const icons = {
 };
 
 // State
-let canSkip = false;
-let hasSkipped = false;
-let typingComplete = false;
 let messageCount = 0;
 let idleTimer = null;
 let hasShownProactive = false;
@@ -21,251 +17,156 @@ const WORKER_URL = 'https://ryan-chat.usatu2001.workers.dev';
 // Store conversation history
 let conversationHistory = [];
 
-// Time and date (EST)
+// Time and date (Berkeley, PT)
 function updateTime() {
     const now = new Date();
-    const timeStr = now.toLocaleTimeString('en-US', { 
-        timeZone: 'America/New_York',
+    const timeStr = now.toLocaleTimeString('en-US', {
+        timeZone: 'America/Los_Angeles',
         hour: 'numeric',
         minute: '2-digit',
         hour12: true
     });
     const dateStr = now.toLocaleDateString('en-US', {
-        timeZone: 'America/New_York',
+        timeZone: 'America/Los_Angeles',
         weekday: 'long',
         month: 'long',
-        day: 'numeric',
-        year: 'numeric'
+        day: 'numeric'
     });
-    document.getElementById('time').textContent = timeStr + ' EST';
+    document.getElementById('time').textContent = timeStr + ' PT';
     document.getElementById('date').textContent = dateStr;
 }
 updateTime();
 setInterval(updateTime, 1000);
+document.getElementById('year').textContent = new Date().getFullYear();
 
-// Typing animation content
-const lines = [
-    "Ryan Ding",
-    "Senior @ Conestoga, PGSS Alumni",
-    "\"What is the most important step a man can take? It's not the first one, is it? It's the next one. Always the next step.\"",
-    "currently:",
-    "  - conducting AI research @ Algoverse AI",
-    "  - working with Chester County OIC on ESL education",
-    "  - leading VEX Robotics Team 6121C as programmer",
-    "previously:",
-    "  - pennsylvania governor's school for the sciences @ Carnegie Mellon University",
-    "  - research intern @ Temple University under Professor Stephen MacNeil",
-    "  - kids instructor @ Lifetime Fitness",
-    "leadership:",
-    "  - executive secretary @ Conestoga Student Council",
-    "  - social media editor @ The Spoke",
-    "  - vice president @ AI Club",
-    "  - fundraising chair @ MiniTHON (raised $20k+ annually)",
-    "achievements:",
-    "  - published at NeurIPS 2024, ICMI 2026, SoCalNLP 2024",
-    "  - USABO semifinalist, 2x AIME qualifier, USACO silver",
-    "  - 3x eastern PA vex robotics skills champion & worlds qualifier",
-    "  - varsity squash (#3 seed, team ranked #8 nationally)",
-];
+// Hero name typing animation
+const NAME = 'Ryan Ding';
+const typedName = document.getElementById('typedName');
 
-let currentLine = 0;
-let currentChar = 0;
-const contentDiv = document.getElementById('content');
-
-function typeCharacter() {
-    if (hasSkipped || currentLine >= lines.length) {
-        finishTyping();
-        return;
-    }
-
-    if (currentLine === 1) {
-        canSkip = true;
-        document.getElementById('skipHint').classList.add('visible');
-    }
-
-    const line = lines[currentLine];
-    
-    if (currentChar < line.length) {
-        const char = line[currentChar];
-        let lastP = contentDiv.querySelector(`[data-line="${currentLine}"]`);
-        
-        if (!lastP) {
-            lastP = document.createElement('p');
-            lastP.setAttribute('data-line', currentLine);
-            contentDiv.appendChild(lastP);
-        }
-        
-        lastP.textContent += char;
-        currentChar++;
-        setTimeout(typeCharacter, 17);
+function typeName(i = 0) {
+    if (i <= NAME.length) {
+        typedName.textContent = NAME.slice(0, i);
+        setTimeout(() => typeName(i + 1), 90);
     } else {
-        currentLine++;
-        currentChar = 0;
-        setTimeout(typeCharacter, 160);
+        document.body.classList.add('typed');
     }
 }
-
-function finishTyping() {
-    document.getElementById('cursor').style.display = 'none';
-    document.getElementById('skipHint').classList.remove('visible');
-    typingComplete = true;
-    
-    // Show remaining content
-    while (currentLine < lines.length) {
-        const line = lines[currentLine];
-        const p = document.createElement('p');
-        p.setAttribute('data-line', currentLine);
-        p.textContent = line;
-        contentDiv.appendChild(p);
-        currentLine++;
-    }
-    
-    showSocialLinks();
-    setTimeout(() => {
-        document.getElementById('chatSection').classList.add('visible');
-        startIdleTimer();
-    }, 500);
-}
-
-// Skip functionality
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && canSkip && !hasSkipped) {
-        hasSkipped = true;
-        finishTyping();
-    }
-});
 
 // Social links
-function showSocialLinks() {
-    const footer = document.getElementById('footer');
-    const linksDiv = document.createElement('div');
-    linksDiv.className = 'social-links';
-    
+function renderSocialLinks() {
+    const linksDiv = document.getElementById('socialLinks');
     const socialLinks = [
-        { icon: 'instagram', url: 'https://instagram.com/ryanfding' },
-        { icon: 'linkedin', url: 'https://www.linkedin.com/in/ryan-ding-09b669256/' },
-        { icon: 'github', url: 'https://github.com/ryanding' },
-        { icon: 'email', url: 'mailto:ryanding28@gmail.com' }
+        { icon: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/in/ryan-d-214710214/' },
+        { icon: 'github', label: 'GitHub', url: 'https://github.com/RyanFDing' },
+        { icon: 'instagram', label: 'Instagram', url: 'https://instagram.com/ryanfding' },
+        { icon: 'email', label: 'Email', url: 'mailto:ryanding@berkeley.edu' }
     ];
-    
-    socialLinks.forEach((social, i) => {
+
+    socialLinks.forEach((social) => {
         const link = document.createElement('a');
         link.href = social.url;
         link.className = 'social-link';
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
-        link.innerHTML = icons[social.icon];
-        link.style.animationDelay = `${i * 0.4}s`;
+        link.setAttribute('aria-label', social.label);
+        link.innerHTML = icons[social.icon] + `<span>${social.label}</span>`;
         linksDiv.appendChild(link);
     });
-    
-    footer.appendChild(linksDiv);
 }
+renderSocialLinks();
+
+// Reveal sections on scroll
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
 
 // Chat functionality
 const chatContainer = document.getElementById('chatContainer');
 const chatInput = document.getElementById('chatInput');
 const chatButton = document.getElementById('chatButton');
 
-function addMessage(sender, text) {
+function createMessage(sender) {
     const msgDiv = document.createElement('div');
     msgDiv.className = `chat-message ${sender}`;
-    msgDiv.innerHTML = `
-        <div class="sender">${sender === 'user' ? 'You' : 'Ryan'}</div>
-        <div class="message-text">${text}</div>
-    `;
+    const senderDiv = document.createElement('div');
+    senderDiv.className = 'sender';
+    senderDiv.textContent = sender === 'user' ? 'You' : 'Ryan';
+    const textDiv = document.createElement('div');
+    textDiv.className = 'message-text';
+    msgDiv.append(senderDiv, textDiv);
     chatContainer.appendChild(msgDiv);
+    return textDiv;
+}
+
+function addMessage(sender, text) {
+    const textDiv = createMessage(sender);
+    textDiv.textContent = text;
     chatContainer.scrollTop = chatContainer.scrollHeight;
-    return msgDiv;
+    return textDiv.parentElement;
 }
 
 async function sendMessage() {
     const message = chatInput.value.trim();
     if (!message) return;
-    
+
     addMessage('user', message);
     chatInput.value = '';
     messageCount++;
-    
-    // Add to conversation history
-    conversationHistory.push({
-        role: 'user',
-        content: message
-    });
-    
+
+    conversationHistory.push({ role: 'user', content: message });
+
     if (messageCount === 4) {
         document.getElementById('venmoMessage').classList.add('visible');
     }
-    
+
     chatButton.disabled = true;
     chatInput.disabled = true;
-    
-    // Show typing indicator
+
     const typingMsg = addMessage('ai', 'typing...');
-    
+
     try {
-        console.log('Sending request to:', WORKER_URL);
-        console.log('Message history:', conversationHistory);
-        
         const response = await fetch(WORKER_URL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                messages: conversationHistory
-            })
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: conversationHistory })
         });
 
-        console.log('Response status:', response.status);
-        
         if (!response.ok) {
-            const errorText = await response.text();
-            console.error('Response error:', errorText);
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log('Full API Response:', data);
-        
-        // Remove typing indicator
         typingMsg.remove();
-        
+
         // Check different possible response formats
         let aiResponse;
-        
         if (data.choices && data.choices[0] && data.choices[0].message) {
-            // Standard OpenAI/Groq format
             aiResponse = data.choices[0].message.content;
         } else if (data.message) {
-            // Alternative format
             aiResponse = data.message;
         } else if (data.content) {
-            // Another alternative
             aiResponse = data.content;
         } else if (data.error) {
-            // Error in response
             throw new Error(data.error);
         } else {
-            console.error('Unexpected response format:', data);
             throw new Error('Unexpected response format from API');
         }
-        
-        // Add to conversation history
-        conversationHistory.push({
-            role: 'assistant',
-            content: aiResponse
-        });
-        
-        // Display AI response with typing effect
+
+        conversationHistory.push({ role: 'assistant', content: aiResponse });
         await typeMessage('ai', aiResponse);
-        
     } catch (error) {
-        console.error('Full error details:', error);
+        console.error('Chat error:', error);
         typingMsg.remove();
-        addMessage('ai', "Sorry, I'm having trouble responding right now. Feel free to email me at ryanding28@gmail.com!");
+        addMessage('ai', "Sorry, I'm having trouble responding right now. Feel free to email me at ryanding@berkeley.edu!");
     }
-    
+
     chatButton.disabled = false;
     chatInput.disabled = false;
     chatInput.focus();
@@ -274,20 +175,9 @@ async function sendMessage() {
 
 // Typing effect for AI messages
 async function typeMessage(sender, text) {
-    const msgDiv = document.createElement('div');
-    msgDiv.className = `chat-message ${sender}`;
-    msgDiv.innerHTML = `
-        <div class="sender">Ryan</div>
-        <div class="message-text"></div>
-    `;
-    chatContainer.appendChild(msgDiv);
-    
-    const textDiv = msgDiv.querySelector('.message-text');
-    let currentText = '';
-    
-    for (let i = 0; i < text.length; i++) {
-        currentText += text[i];
-        textDiv.textContent = currentText;
+    const textDiv = createMessage(sender);
+    for (let i = 1; i <= text.length; i++) {
+        textDiv.textContent = text.slice(0, i);
         chatContainer.scrollTop = chatContainer.scrollHeight;
         await new Promise(resolve => setTimeout(resolve, 20));
     }
@@ -298,22 +188,16 @@ chatInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') sendMessage();
 });
 
-// Idle detection
-async function startIdleTimer() {
+// Idle detection: greet once the chat has been on screen for a while
+function startIdleTimer() {
     idleTimer = setTimeout(async () => {
         if (!hasShownProactive && messageCount === 0) {
             hasShownProactive = true;
-            
-            // Add proactive message to history
-            const proactiveMsg = "Hey there! Feel free to ask me about my research, robotics, or school activities. Or just say hi! 👋";
-            conversationHistory.push({
-                role: 'assistant',
-                content: proactiveMsg
-            });
-            
+            const proactiveMsg = "Hey there! Ask me about my research, my projects, or life at Berkeley. Or just say hi! 👋";
+            conversationHistory.push({ role: 'assistant', content: proactiveMsg });
             await typeMessage('ai', proactiveMsg);
         }
-    }, 6000);
+    }, 4000);
 }
 
 function resetIdleTimer() {
@@ -324,8 +208,16 @@ function resetIdleTimer() {
 chatInput.addEventListener('input', resetIdleTimer);
 chatInput.addEventListener('focus', resetIdleTimer);
 
+const chatObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+        startIdleTimer();
+        chatObserver.disconnect();
+    }
+}, { threshold: 0.4 });
+chatObserver.observe(document.getElementById('chat'));
+
 // Start
 setTimeout(() => {
     document.getElementById('overlay').classList.add('hidden');
-    setTimeout(() => typeCharacter(), 500);
-}, 1000);
+    setTimeout(typeName, 400);
+}, 300);
